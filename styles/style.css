@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.slide .content {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 20px;
+    max-width: 100%;
+    bottom: 0;
+    line-height: 1.6;
+    transform: rotateX(180deg);
+    transition: all 1s ease;
+    box-shadow: 1px 1px 100px 1px #fff;
+}
+
+
+/*
+* ==================================
+* Display and animate the next slide
+* =======================
+*/
+
+.display {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.display .content {
+    transform: rotateX(0);
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+
+/*
+* ==============================
+* Add bkgroung img to each slide
+* ==============================
+*
+*/
+
+.s1 {
+    background-image: url('/imgs/img1.jpg');
+}
+
+.s2 {
+    background-image: url('/imgs/img2.jpg');
+}
+
+.s3 {
+    background-image: url('/imgs/img3.jpg');
+}
+
+.s4 {
+    background-image: url('/imgs/img4.jpg');
+}
+
+.s5 {
+    background-image: url('/imgs/img5.jpg');
+}
+
+.s6 {
+    background-image: url('/imgs/img6.jpg');
+}
+
+.s1,
+.s2,
+.s3,
+.s4,
+.s5,
+.s6 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*
+*
+* =====================
+* Style next/prevouis button
+* ==========================
+*
+*/
+
+button {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+button img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+#next {
+    position: absolute;
+    right: 0;
+}
